@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Photo Gallery</title>
+    <style>
+        body { font-family: Arial; background: #eee; text-align: center; }
+        img { width: 150px; margin: 10px; border-radius: 10px; }
+        a { display: block; margin: 20px; }
+    </style>
+</head>
+<body>
+
+<h2>Photo Booth Gallery</h2>
+
+{% for photo in photos %}
+    <img src="/static/photos/{{ photo }}">
+{% endfor %}
+
+<a href="/">⬅ Back to Booth</a>
+
+</body>
+</html>

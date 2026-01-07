@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Photo Booth</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="booth">
+    <h1>PHOTO BOOTH</h1>
+
+    <div class="screen">
+        <div id="countdown"></div>
+        <div id="flash"></div>
+
+        <video id="video" autoplay playsinline></video>
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <div class="controls">
+        <button type="button" onclick="capture()">📸 Capture</button>
+        <button type="button" onclick="startStrip()">🎞 Photo Strip</button>
+        <button type="button" onclick="download()">⬇ Download</button>
+        <button type="button" onclick="printPhoto()">🖨 Print</button>
+    </div>
+
+    <div class="filters">
+        <button onclick="setFilter('none')">Normal</button>
+        <button onclick="setFilter('grayscale(100%)')">B & W</button>
+        <button onclick="setFilter('sepia(100%)')">Vintage</button>
+        <button onclick="setFilter('blur(2px)')">Blur</button>
+    </div>
+
+    <a href="/gallery" class="gallery-link">📂 View Gallery</a>
+</div>
+
+<audio id="shutter" src="{{ url_for('static', filename='shutter.mp3') }}"></audio>
+
+<script src="{{ url_for('static', filename='js/camera.js') }}"></script>
+</body>
+</html>
